@@ -1,0 +1,47 @@
+! --- special colors ---
+*background:#151617
+*foreground:#cdcfce
+
+! --- standard colors ---
+! black
+*color0: #373737
+! bright_black
+*color8: #686868
+! red
+*color1: #9e6b71
+! bright_red
+*color9: #b69094
+! green
+*color2: #719e6b
+! bright_green
+*color10: #94b690
+! yellow
+*color3: #9e986c
+! bright_yellow
+*color11: #b5b18f
+! blue
+*color4: #6c8b9e
+! bright_blue
+*color12: #90a7b6
+! purple
+*color5: #986b9e
+! bright_purple
+*color13: #b290b6
+! cyan
+*color6: #6b9e98
+! bright_cyan
+*color14: #90b6b3
+! white
+*color7: #b8baba
+! bright_white
+*color15: #cdcfce
+
+
+! --- rxvt-unicode ---
+URxvt*scrollBar: false
+URxvt*geometry: 108x40
+URxvt*font: xft:dina:pixelsize=8
+!URxvt*font: xft:dina:pixelsize=8,xft:Inconsolata\ for\ Powerline:pixelsize=11
+URxvt*boldFont: xft:dina:pixelsize=8
+URxvt*title: "urxvt"
+URxvt*buffered: true
