@@ -68,7 +68,8 @@ execute pathogen#infect()
 " NERDTree
 map <F2> :NERDTreeToggle<CR>
 
-" Powerline
-let g:Powerline_Symbols = 'fancy'
+" lightline
 set laststatus=2
-set t_Co=256
+let g:lightline = {
+    \ 'colorscheme': 'wombat',
+    \}
