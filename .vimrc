@@ -61,7 +61,7 @@ vnoremap <s-tab> <gv
 
 " Better search (and replace)
 noremap <space> /
-noremap <leader><space> :noh<cr>
+noremap <silent> <leader><space> :noh<cr>
 vnoremap <C-r> "hy:%s/<C-r>h//gc<left><left><left>
 
 " Return to last edit position when opening files (You want this!)
