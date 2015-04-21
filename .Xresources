@@ -43,5 +43,5 @@ URxvt*geometry: 108x40
 URxvt*font: xft:dina:pixelsize=8
 !URxvt*font: xft:dina:pixelsize=8,xft:Inconsolata\ for\ Powerline:pixelsize=11
 URxvt*boldFont: xft:dina:pixelsize=8
-URxvt*title: "urxvt"
+URxvt*title: urxvt
 URxvt*buffered: true
