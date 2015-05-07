@@ -55,6 +55,10 @@ set showcmd
 map j gj
 map k gk
 
+" Swap hard and soft BOL
+noremap 0 ^
+noremap ^ 0
+
 "Better indenting
 vnoremap <tab> >gv
 vnoremap <s-tab> <gv
@@ -64,14 +68,14 @@ noremap <space> /
 noremap <silent> <leader><space> :noh<cr>
 vnoremap <C-r> "hy:%s/<C-r>h//gc<left><left><left>
 
+" Comment the current selection
+vnoremap <C-k> 0<C-v>I//<esc>
+
 " Return to last edit position when opening files (You want this!)
 autocmd BufReadPost *
      \ if line("'\"") > 0 && line("'\"") <= line("$") |
      \   exe "normal! g`\"" |
      \ endif
-
-" Shortcut to first character
-map 0 ^
 
 " Plugins
 execute pathogen#infect()
