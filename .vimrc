@@ -1,6 +1,5 @@
-set nocompatible
 filetype off
-
+set nocompatible
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
@@ -12,11 +11,12 @@ Plugin 'itchyny/lightline.vim'
 
 Plugin 'tpope/vim-fugitive'
 
-Plugin 'vim-syntastic/syntastic'
-
 Plugin 'Valloric/YouCompleteMe'
 
-Plugin 'ternjs/tern_for_vim'
+Plugin 'Valloric/ListToggle'
+
+Plugin 'abudden/taghighlight-automirror'
+
 
 call vundle#end()
 filetype plugin indent on
@@ -103,7 +103,7 @@ vnoremap <C-r> "hy:%s/<C-r>h//gc<left><left><left>
 vnoremap <C-k> 0<C-v>I//<esc>
 
 " Load tag files
-set tags=./tags;
+set tags=./tags
 
 " Return to last edit position when opening files (You want this!)
 autocmd BufReadPost *
@@ -133,13 +133,8 @@ let g:lightline = {
       \ }
 
 
-" Syntastic
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-map <F3> :SyntasticCheck<CR>
-map <F4> :SyntasticReset<CR>
+" ListToggle
+let g:lt_location_list_toggle_map = '<leader>l'
 
 hi clear SignColumn
 hi SpellBad  cterm=NONE ctermbg=darkred  ctermfg=white    guibg=darkred  guifg=white
@@ -147,16 +142,12 @@ hi SpellCap  cterm=NONE ctermbg=darkred  ctermfg=white    guibg=darkred  guifg=w
 hi Error     cterm=NONE ctermbg=NONE     ctermfg=darkred  guibg=NONE     guifg=darkred
 hi Todo      cterm=NONE ctermbg=NONE     ctermfg=yellow   guibg=NONE     guifg=yellow
 
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 1
-
-let g:syntastic_javascript_checkers=['eslint']
-let g:syntastic_javascript_eslint_exe=['eslint']
-
-
 " YouCompleteMe
-let g:ycm_autoclose_preview_window_after_insertion = 1
-let g:ycm_goto_buffer_command = 'new-or-existing-tab'
+let g:ycm_autoclose_preview_window_after_insertion=1
+let g:ycm_always_populate_location_list=1
+let g:ycm_goto_buffer_command='new-or-existing-tab'
 nnoremap <silent> <C-LeftMouse> <LeftMouse>:YcmCompleter GoToDefinition<CR>
+
+let g:ycm_semantic_triggers = {
+	\ 'c': ['re!\w{2}']
+	\ }
